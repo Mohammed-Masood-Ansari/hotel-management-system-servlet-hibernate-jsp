@@ -40,11 +40,12 @@
 					<li class="nav-item"><a class="nav-link" href="#">Hotel-Management-System</a>
 					</li>
 				</ul>
+				
 				<!-- Left links -->
 
 				<div class="d-flex align-items-center">
-					<button data-mdb-ripple-init type="button"
-						class="btn btn-link px-3 me-2">Login</button>
+					<a data-mdb-ripple-init class="btn btn-dark px-3"
+						href="logoutAdmin" role="button">Logout</a>
 					<a data-mdb-ripple-init class="btn btn-dark px-3"
 						href="https://github.com/Mohammed-Masood-Ansari" role="button"><i
 						class="fab fa-github"></i></a>

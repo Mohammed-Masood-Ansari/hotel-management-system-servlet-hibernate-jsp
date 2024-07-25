@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>hotel-owner-login</title>
 <!-- Font Awesome -->
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -31,6 +31,10 @@
 </style>
 </head>
 <body>
+
+	<%
+		String msg = (String)request.getAttribute("msg");
+	%>
 	<section class="vh-100 gradient-custom">
 		<div class="container py-5 h-100">
 			<div
@@ -41,29 +45,33 @@
 
 							<div class="mb-md-5 mt-md-4 pb-5">
 
-								<form action="loginAdmin" method="post">
+								<form action="hotelOwnerLogin" method="post">
 									<h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+									<%if(msg!=null){ %>
+										<h4 style="color: red;"><%=msg%></h4>
+									<%} %>
 									<p class="text-white-50 mb-5">Please enter your login and
 										password!</p>
 
 									<div data-mdb-input-init class="form-outline form-white mb-4">
 										<input type="email" id="typeEmailX"
-											class="form-control form-control-lg" /> <label
+											class="form-control form-control-lg" name="email" /> <label
 											class="form-label" for="typeEmailX">Email</label>
 									</div>
 
 									<div data-mdb-input-init class="form-outline form-white mb-4">
 										<input type="password" id="typePasswordX"
-											class="form-control form-control-lg" /> <label
+											class="form-control form-control-lg" name="password" /> <label
 											class="form-label" for="typePasswordX">Password</label>
 									</div>
 
-									<p class="small mb-5 pb-lg-2">
-										<a class="text-white-50" href="#!">Forgot password?</a>
-									</p>
 
 									<button data-mdb-button-init data-mdb-ripple-init
 										class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+										
+									<p class="small mb-5 pb-lg-2">
+										<a class="text-white-50" href="#!">Forgot password?</a>
+									</p>
 
 								</form>
 

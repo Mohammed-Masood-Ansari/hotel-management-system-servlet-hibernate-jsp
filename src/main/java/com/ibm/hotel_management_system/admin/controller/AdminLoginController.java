@@ -10,12 +10,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(value = "/loginAdmin")
 public class AdminLoginController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		HttpSession httpSession = req.getSession();
 		
 		AdminDao dao = new AdminDao();
 		
@@ -27,7 +30,7 @@ public class AdminLoginController extends HttpServlet {
 		if(admin!=null) {
 			
 			if(pass.equals(admin.getPassword())) {
-				
+				httpSession.setAttribute("adminSession", email);
 				req.getRequestDispatcher("admin-home.jsp").forward(req, resp);
 			}else {
 				req.setAttribute("msg", "password is wrong");

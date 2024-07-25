@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+		<jsp:include page="admin-navbar.jsp"/><br>
+		
+		<jsp:include page="hotel-owner-display.jsp"></jsp:include>
 </body>
 </html>
