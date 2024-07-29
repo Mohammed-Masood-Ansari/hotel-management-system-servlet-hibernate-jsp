@@ -48,6 +48,7 @@
 		String msg = (String)request.getAttribute("msg");
 	%>
 
+	<jsp:include page="hotel-owner-navbar.jsp"></jsp:include>
 	<section class="vh-100 bg-image"
 		style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
 		<div class="mask d-flex align-items-center h-100 gradient-custom-3">

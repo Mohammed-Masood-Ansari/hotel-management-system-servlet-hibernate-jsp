@@ -1,5 +1,7 @@
 package com.ibm.hotel_management_system.admin.dao;
 
+import java.util.List;
+
 import com.ibm.hotel_management_system.dto.Hotel;
 
 import jakarta.persistence.EntityManager;
@@ -22,5 +24,14 @@ public class HotelDao {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	/*
+	 * 
+	 * getAllHotelDetails
+	 * 
+	 */
+	public List<Hotel> getAllHotelDetailsDao(){
+		return em.createQuery("FROM Hotel").getResultList();
 	}
 }

@@ -37,12 +37,20 @@
 			<div class="collapse navbar-collapse" id="navbarButtonsExample">
 				<!-- Left links -->
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="#">Hotel-Management-System</a>
+					<li class="nav-item"><a class="nav-link" href="#">Hotel-Management-System  (Hotel-Owner)</a>
 					</li>
 				</ul>
 				
 				<!-- Left links -->
 
+				<div style="margin-right: 130px; ">
+					<a href="home-hotel-owner.jsp">Display-Hotels</a>
+				</div>
+				
+				<div style="margin-right: 100px; ">
+					<a href="hotel-register.jsp">Add-Hotels</a>
+				</div>
+				
 				<div class="d-flex align-items-center">
 					<a data-mdb-ripple-init class="btn btn-dark px-3"
 						href="logoutOwner" role="button">Logout</a>
