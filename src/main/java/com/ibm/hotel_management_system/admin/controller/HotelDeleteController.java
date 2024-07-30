@@ -2,27 +2,27 @@ package com.ibm.hotel_management_system.admin.controller;
 
 import java.io.IOException;
 
+import com.ibm.hotel_management_system.admin.dao.HotelDao;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-@SuppressWarnings("serial")
-@WebServlet(value = "/logoutOwner")
-public class HotelOwnerLogoutController extends HttpServlet {
+@WebServlet(value = "/deleteHotel")
+public class HotelDeleteController  extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		HttpSession httpSession = req.getSession();
+		int id = Integer.parseInt(req.getParameter("id"));
 		
-		if(httpSession.getAttribute("hownerSession")!=null) {
+		boolean b=new HotelDao().deleteHotelByIdDao(id);
+		
+		if(b) {
 			
-			httpSession.invalidate();
-			
-			req.getRequestDispatcher("login-hotel-owner.jsp").forward(req, resp);
+			resp.sendRedirect("home-hotel-owner.jsp");
 		}
 	}
 }

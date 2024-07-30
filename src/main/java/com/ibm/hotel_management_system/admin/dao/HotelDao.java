@@ -13,7 +13,7 @@ public class HotelDao {
 	EntityManager em = Persistence.createEntityManagerFactory("hotel-project").createEntityManager();
 
 	EntityTransaction et = em.getTransaction();
-	
+
 	public Hotel saveHotelDao(Hotel hotel) {
 		try {
 			et.begin();
@@ -25,13 +25,29 @@ public class HotelDao {
 			return null;
 		}
 	}
-	
+
 	/*
 	 * 
 	 * getAllHotelDetails
 	 * 
 	 */
-	public List<Hotel> getAllHotelDetailsDao(){
+	public List<Hotel> getAllHotelDetailsDao() {
 		return em.createQuery("FROM Hotel").getResultList();
+	}
+
+	/*
+	 * delete method
+	 */
+	public boolean deleteHotelByIdDao(int id) {
+
+		Hotel hotel = em.find(Hotel.class, id);
+		if (hotel != null) {
+			et.begin();
+			em.remove(hotel);
+			et.commit();
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

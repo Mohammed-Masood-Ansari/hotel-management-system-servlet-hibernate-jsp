@@ -24,6 +24,8 @@ public class Hotel {
 	private String city;
 	private String address;
 	private double price;
+	@Column(name = "verifystatus")
+	private String verifyStatus;
 	
 	@Lob
 	@Column(columnDefinition = "LONGBLOB")
@@ -40,6 +42,7 @@ public class Hotel {
 		this.price = price;
 		this.image = image;
 		this.hotelOwner = hotelOwner;
+		this.verifyStatus="no";
 	}
 	
 	

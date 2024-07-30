@@ -28,9 +28,18 @@
 </head>
 <body>
 
+	<jsp:include page="admin-navbar.jsp"></jsp:include><br>
+
 	<%
 	    List<Hotel> hotels = new HotelDao().getAllHotelDetailsDao();
 	%>
+	
+	<form action="" method="get" style="text-align: center;">
+	
+	 <input type="text" placeholder="search hotel by owner name" name="">
+	 <input type="submit" value="SEARCH">
+	 
+	</form>
 
 	<table class="table align-middle mb-0 bg-white">
 		<thead class="bg-light">
@@ -47,11 +56,6 @@
 		<%
 		for (Hotel hotel : hotels) {
 			HotelOwner owner=hotel.getHotelOwner();
-			HttpSession httpSession = request.getSession();
-			
-			String email =(String)httpSession.getAttribute("hownerSession");
-			
-			if(email.equalsIgnoreCase(owner.getEmail())){
 		%>
 
 		<%
@@ -95,16 +99,13 @@
 					<td><a href="#"><span
 						class="badge badge-danger rounded-pill d-inline"><%=hotel.getVerifyStatus()%></span></a></td>
 					
-				<%}%>
-						
+				<%}%>	
 				<td><a href="#"><span
-						class="badge badge-success rounded-pill d-inline">EDIT</span></a></td>
-				<td><a href="deleteHotel?id=<%=hotel.getId()%>"><span
-						class="badge badge-danger rounded-pill d-inline">DELETE</span></a></td>
+						class="badge badge-success rounded-pill d-inline">Verify</span></a></td>
 			</tr>
 		</tbody>
 		<%
-		}}
+		}
 		%>
 	</table>
 </body>
