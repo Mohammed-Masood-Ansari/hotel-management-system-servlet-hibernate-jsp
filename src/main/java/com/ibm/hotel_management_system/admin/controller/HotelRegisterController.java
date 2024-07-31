@@ -32,7 +32,7 @@ public class HotelRegisterController extends HttpServlet {
 		double price = Double.parseDouble(req.getParameter("price"));
 
 		Part part = req.getPart("image");
-
+		
 		InputStream inputStream = part.getInputStream();
 
 		String email = (String) httpSession.getAttribute("hownerSession");

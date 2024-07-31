@@ -97,7 +97,7 @@
 					
 				<%}%>
 						
-				<td><a href="#"><span
+				<td><a href="hotel-edit-owner.jsp?id=<%=hotel.getId()%>"><span
 						class="badge badge-success rounded-pill d-inline">EDIT</span></a></td>
 				<td><a href="deleteHotel?id=<%=hotel.getId()%>"><span
 						class="badge badge-danger rounded-pill d-inline">DELETE</span></a></td>

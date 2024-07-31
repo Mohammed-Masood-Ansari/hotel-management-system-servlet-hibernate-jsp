@@ -50,4 +50,40 @@ public class HotelDao {
 			return false;
 		}
 	}
+	
+	/*
+	 * update hotel
+	 */
+	public Hotel updateHotelByIdDao(Hotel hotel) {
+		
+		Hotel hotel2=fetchHotelByIdDao(hotel.getId());
+		
+		if(hotel2!=null) {
+			hotel2.setName(hotel.getName());
+			hotel2.setAddress(hotel.getAddress());
+			hotel2.setCity(hotel.getCity());
+			hotel2.setPrice(hotel.getPrice());
+			
+			if(hotel.getImage()!=null) {
+			   hotel2.setImage(hotel.getImage());
+			}
+			
+			et.begin();
+			em.merge(hotel2);
+			et.commit();
+			return hotel2;
+		}else {
+			return null;
+		}
+		
+	}
+	
+	/*
+	 * fetch hotel by id
+	 */
+	public Hotel fetchHotelByIdDao(int id) {
+		
+		return em.find(Hotel.class, id);
+	}
+	
 }

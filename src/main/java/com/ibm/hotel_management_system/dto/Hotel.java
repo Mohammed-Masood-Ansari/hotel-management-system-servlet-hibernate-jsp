@@ -44,6 +44,18 @@ public class Hotel {
 		this.hotelOwner = hotelOwner;
 		this.verifyStatus="no";
 	}
+
+	public Hotel(int id, String name, String city, String address, double price, byte[] image) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.city = city;
+		this.address = address;
+		this.price = price;
+		this.image = image;
+	}
+	
+	
 	
 	
 	
