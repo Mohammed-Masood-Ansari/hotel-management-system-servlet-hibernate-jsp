@@ -106,7 +106,7 @@
 									
 									<div data-mdb-input-init class="form-outline mb-4">
 										<input type="file" id="form3Example4cdg"
-											class="form-control form-control-lg" name="image"/>
+											class="form-control form-control-lg" name="image" value="<%=hotel.getImage()%>" required="required"/>
 									</div>
 
 									<div class="form-check d-flex justify-content-center mb-5">

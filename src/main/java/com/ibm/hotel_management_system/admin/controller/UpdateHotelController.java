@@ -27,6 +27,10 @@ public class UpdateHotelController extends HttpServlet{
 		String address = req.getParameter("address");
 		double price = Double.parseDouble(req.getParameter("price"));
 		
+		String image = req.getParameter("image");
+		
+		System.out.println(image);
+		
 		Part part = req.getPart("image");
 		
 		Hotel hotel=null;
@@ -35,6 +39,9 @@ public class UpdateHotelController extends HttpServlet{
 		
 		if(part!=null) {
 			InputStream inputStream = part.getInputStream();
+			
+			System.out.println(inputStream);
+			
 			hotel=new Hotel(id, name, city, address, price, inputStream.readAllBytes());
 		}else {
 			hotel=new Hotel(id, name, city, address, price, null);

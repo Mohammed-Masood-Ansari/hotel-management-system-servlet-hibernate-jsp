@@ -100,7 +100,7 @@
 						class="badge badge-danger rounded-pill d-inline"><%=hotel.getVerifyStatus()%></span></a></td>
 					
 				<%}%>	
-				<td><a href="#"><span
+				<td><a href="verifyHotelAdmin?id=<%=hotel.getId()%>"><span
 						class="badge badge-success rounded-pill d-inline">Verify</span></a></td>
 			</tr>
 		</tbody>

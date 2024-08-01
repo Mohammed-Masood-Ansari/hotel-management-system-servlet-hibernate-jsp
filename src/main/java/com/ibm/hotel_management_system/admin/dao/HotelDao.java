@@ -78,7 +78,11 @@ public class HotelDao {
 		
 	}
 	
-	/*
+	/**
+	 * 
+	 * @param id
+	 * @return Hotel
+	 * 
 	 * fetch hotel by id
 	 */
 	public Hotel fetchHotelByIdDao(int id) {
@@ -86,4 +90,15 @@ public class HotelDao {
 		return em.find(Hotel.class, id);
 	}
 	
+	/*
+	 * verifyHotelByAdmin
+	 */
+	public Hotel verifyHotelByAdminDao(Hotel hotel) {
+		
+		et.begin();
+		em.merge(hotel);
+		et.commit();
+		
+		return hotel;
+	}
 }
