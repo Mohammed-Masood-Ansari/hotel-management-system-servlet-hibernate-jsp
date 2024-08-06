@@ -53,7 +53,7 @@
 
 				<div class="d-flex align-items-center">
 					<a data-mdb-ripple-init class="btn btn-dark px-3"
-						href="logoutAdmin" role="button">Logout</a>
+						href="userLogout" role="button">Logout</a>
 					<a data-mdb-ripple-init class="btn btn-dark px-3"
 						href="https://github.com/Mohammed-Masood-Ansari" role="button"><i
 						class="fab fa-github"></i></a>

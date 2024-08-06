@@ -31,6 +31,10 @@ public class UserDao {
 	public User loginUserByEmailAndPasswordDao(String email) {
 		Query query=em.createNativeQuery("select * from user where email=?1",User.class);
 		query.setParameter(1, email);
-		return (User)query.getSingleResult();
+		try {
+			return (User)query.getSingleResult();
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }

@@ -34,6 +34,18 @@ public class HotelDao {
 	public List<Hotel> getAllHotelDetailsDao() {
 		return em.createQuery("FROM Hotel").getResultList();
 	}
+	
+	/*
+	 * 
+	 * getAllHotelDetailsonlyverified
+	 * 
+	 */
+	public List<Hotel> getAllVerifiedHotelDetailsDao() {
+		
+		List<Hotel> hotels=em.createQuery("FROM Hotel").getResultList();
+
+		return hotels.stream().filter(a->a.getVerifyStatus().equalsIgnoreCase("yes")).toList();
+	}
 
 	/*
 	 * delete method
