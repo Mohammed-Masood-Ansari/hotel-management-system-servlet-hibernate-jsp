@@ -2,6 +2,8 @@ package com.ibm.hotel_management_system.dto;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -22,6 +24,7 @@ public class HotelBooking {
 	private int bookingId;
 	
 	@Column(name = "bookingdatetime")
+	@CreationTimestamp
 	private LocalDateTime bookingDateTime;
 	
 	@OneToOne
