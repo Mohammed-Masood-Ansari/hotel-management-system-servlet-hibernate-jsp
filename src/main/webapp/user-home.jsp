@@ -65,7 +65,7 @@ button:hover {
 
 				<div class="card-body" style="float: left;">
 					<h6 class="card-text">
-						final price=<%=hotel.getPrice()%>
+						final price=<%=(int)hotel.getPrice()%>
 					</h6>
 					<h6 class="card-text">
 						Address=<%=hotel.getAddress()%>
@@ -75,7 +75,7 @@ button:hover {
 					</h6>
 					<div style="display: flex; margin-top: 50px;">
 
-						<a href="#"><button type="button" class="btn btn-primary" style="width: 200px;">BookNow</button></a>
+						<a href="hotel-booking.jsp?hotelId=<%=hotel.getId()%>"><button type="button" class="btn btn-primary" style="width: 200px;">BookNow</button></a>
 
 					</div>
 				</div>

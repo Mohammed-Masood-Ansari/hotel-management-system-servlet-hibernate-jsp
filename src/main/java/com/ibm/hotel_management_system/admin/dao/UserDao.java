@@ -2,6 +2,7 @@ package com.ibm.hotel_management_system.admin.dao;
 
 import java.util.Base64;
 
+import com.ibm.hotel_management_system.dto.HotelBooking;
 import com.ibm.hotel_management_system.dto.User;
 
 import jakarta.persistence.EntityManager;
@@ -34,6 +35,18 @@ public class UserDao {
 		try {
 			return (User)query.getSingleResult();
 		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public HotelBooking saveHotelBookingDao(HotelBooking booking) {
+		try {
+			et.begin();
+			em.persist(booking);
+			et.commit();
+			return booking;
+		} catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		}
 	}

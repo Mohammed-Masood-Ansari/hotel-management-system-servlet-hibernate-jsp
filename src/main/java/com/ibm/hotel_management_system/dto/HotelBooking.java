@@ -21,7 +21,16 @@ public class HotelBooking {
 
 	@Id
 	@Column(name = "bookingid")
-	private int bookingId;
+	private String bookingId;
+	
+	@Column(name = "customername")
+	private String customerName;
+	
+	@Column(name = "customerphone")
+	private long customerPhone;
+	
+	@Column(name = "adharnumber")
+	private long AdharNumber;
 	
 	@Column(name = "bookingdatetime")
 	@CreationTimestamp
@@ -33,4 +42,17 @@ public class HotelBooking {
 	@OneToOne
 	@JoinColumn(name = "hotelid")
 	private Hotel hotel;
+
+	public HotelBooking(String bookingId, String customerName, long customerPhone, long adharNumber, User user,
+			Hotel hotel) {
+		super();
+		this.bookingId = bookingId;
+		this.customerName = customerName;
+		this.customerPhone = customerPhone;
+		AdharNumber = adharNumber;
+		this.user = user;
+		this.hotel = hotel;
+	}
+	
+	
 }
