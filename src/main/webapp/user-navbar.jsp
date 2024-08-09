@@ -44,11 +44,11 @@
 				<!-- Left links -->
 				
 				<div style="margin-right: 120px;">
-						<a href="hotel-display-admin.jsp">Verify-Hotel</a>
+						<a href="userHotelBooking">MyBookings</a>
 				</div>
 				
 				<div style="margin-right: 180px;">
-						<a href="admin-home.jsp">Verify-Owner</a>
+						<a href="user-home.jsp">Home</a>
 				</div>
 
 				<div class="d-flex align-items-center">

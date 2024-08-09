@@ -8,6 +8,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,10 +37,11 @@ public class HotelBooking {
 	@CreationTimestamp
 	private LocalDateTime bookingDateTime;
 	
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name = "userid")
 	private User user;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "hotelid")
 	private Hotel hotel;
 

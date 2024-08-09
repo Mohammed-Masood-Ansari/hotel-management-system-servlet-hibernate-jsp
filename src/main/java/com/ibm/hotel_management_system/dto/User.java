@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,8 +26,8 @@ public class User {
 	private String password;
 	private long phone;
 	
-	@OneToOne(mappedBy = "user")
-	private HotelBooking booking;
+	@OneToMany(mappedBy = "user")
+	private List<HotelBooking> booking;
 
 	public User(String name, String email, String password, long phone) {
 		super();

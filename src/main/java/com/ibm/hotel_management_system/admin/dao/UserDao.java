@@ -1,6 +1,7 @@
 package com.ibm.hotel_management_system.admin.dao;
 
 import java.util.Base64;
+import java.util.List;
 
 import com.ibm.hotel_management_system.dto.HotelBooking;
 import com.ibm.hotel_management_system.dto.User;
@@ -49,5 +50,10 @@ public class UserDao {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public List<HotelBooking> getAllBookingDetailsDao(int userId){
+	   List<HotelBooking> bookings = em.createQuery("from HotelBooking").getResultList();
+	   return bookings.stream().filter(a->a.getUser().getId()==userId).toList();
 	}
 }

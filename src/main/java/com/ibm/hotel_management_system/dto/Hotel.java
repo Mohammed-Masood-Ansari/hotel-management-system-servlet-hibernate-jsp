@@ -1,5 +1,7 @@
 package com.ibm.hotel_management_system.dto;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +36,9 @@ public class Hotel {
 	
 	@ManyToOne
 	private HotelOwner hotelOwner;
+	
+	@OneToMany(mappedBy = "hotel")
+	private List<HotelBooking> bookings;
 
 	public Hotel(String name, String city, String address, double price, byte[] image, HotelOwner hotelOwner) {
 		super();
