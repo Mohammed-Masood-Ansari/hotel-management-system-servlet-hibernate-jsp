@@ -20,7 +20,7 @@ public class UserLogoutController extends HttpServlet {
 		if(httpSession.getAttribute("userSession")!=null) {
 			httpSession.invalidate();
 			req.setAttribute("msg", "logout success");
-			req.getRequestDispatcher("user-login.jsp").forward(req, resp);
+			req.getRequestDispatcher("index.jsp").forward(req, resp);
 		}
 	}
 }
